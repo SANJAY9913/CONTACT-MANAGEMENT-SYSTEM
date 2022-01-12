@@ -5,6 +5,7 @@ struct list{
     char name[20];
     char phone[20];
     char email[20];
+    char address[20];
 }li,check;
 void createcontact(){
     FILE *fp;
@@ -18,23 +19,23 @@ void createcontact(){
     printf("Input Email : "); fflush(stdin); gets(li.email);
     fprintf(fp,"%s %s %s %s\n",li.name,li.phone,li.address,li.email);
     fclose(fp);
-    printf("++++++++++++++++CONTACT ADDED SUCCESFULLY++++++++++++++++\n"
-    system(pause);
+    printf("++++++++++++++++CONTACT ADDED SUCCESFULLY++++++++++++++++\n");
+    system("pause");
 }
 void editcontact(){
     int ch,f=0;
     FILE *fp,*newrec;
     fp=fopen("contact.txt","r");
     newrec=fopen("temp.txt","w");
-    system=("cls");
-    printf("++++++++++++++++CONTACT EDITING++++++++++++++++");
+    system("cls");
+    printf("++++++++++++++++CONTACT EDITING++++++++++++++++\n");
     printf("Enter name : "); fflush(stdin); gets(check.name);
     while(fscanf(fp,"%s %s %s %s\n",li.name,li.phone,li.address,li.email) != EOF)
     {
       if(strcmp(check.name,li.name) == 0){
         f=1;
         do{system("cls");
-        printf("++++++++++++++++CONTACT EDITING++++++++++++++++");
+        printf("++++++++++++++++CONTACT EDITING++++++++++++++++\n");
         printf("1.Name\n");
         printf("2.Phone\n");
         printf("3.Address\n");
@@ -107,7 +108,7 @@ void searchcontact(){
         }
 }fclose(fp);
     if(f == 0){
-        printf("Cannot found the name\n\n");
+        printf("Cannot find the name\n\n");
         system("pause");}
 }
 void listcontact(){
@@ -130,12 +131,6 @@ void listcontact(){
     system("pause");
 }
 void deletecontact(){
-    int ch,f=0;
-    FILE *fp,*newrec;
-    fp = fopen("contact.txt","r");
-    newrec = fopen("temp.txt","w");
-    system("cls");
-    void deletecontact(){
     int ch,f=0;
     FILE *fp,*newrec;
     fp = fopen("contact.txt","r");
@@ -170,14 +165,15 @@ void main(){
     int ch;
     do{
     system("cls");
-   printf("++++++++++++++++MAIN MENU++++++++++++++++\n");
-   printf("1.Create new contact\n");
-   printf("2.Edit contact\n");
-   printf("3.Search contact\n");
-   printf("4.List contact\n");
-   printf("5.Delete contact\n");
-   printf("0.Exit\n");
-   printf("        Enter option : "); scanf("%d",&ch);
+    printf("+++++++++++++RA2111043010046++++++++++++++\n");
+    printf("+++++++++++++++++MAIN MENU+++++++++++++++++\n");
+    printf("1.Create new contact\n");
+    printf("2.Edit contact\n");
+    printf("3.Search contact\n");
+    printf("4.List contact\n");
+    printf("5.Delete contact\n");
+    printf("0.Exit\n");
+    printf("        Enter option : "); scanf("%d",&ch);
    switch(ch){
     case 1: createcontact(); break;
     case 2: editcontact(); break;
@@ -188,6 +184,4 @@ void main(){
 
 
     }while( ch !=0);
-
-
-}
+    }
